@@ -1,29 +1,29 @@
-# # For the following list of numbers:
+# For the following list of numbers:
 
-# from ast import Return
+from ast import Return
 
 
-# numbers = [1, 6, 2, 2, 7, 1, 6, 13, 99, 7]
+numbers = [1, 6, 2, 2, 7, 1, 6, 13, 99, 7]
 
-# # 1. Print out a list of the even integers:
-# for num in numbers:
-#     if num % 2 == 0:
-#         print(num)
+# 1. Print out a list of the even integers:
+for num in numbers:
+    if num % 2 == 0:
+        print(num)
 
-# # 2. Print the difference between the largest and smallest value:
-# numbers.sort()
-# smallest = numbers[0]
-# largest = numbers[-1]
-# print(largest - smallest)
+# 2. Print the difference between the largest and smallest value:
+numbers.sort()
+smallest = numbers[0]
+largest = numbers[-1]
+print(largest - smallest)
 
-# # 3. Print True if the list contains a 2 next to a 2 somewhere:
+# 3. Print True if the list contains a 2 next to a 2 somewhere:
 
-# # The help of stackoverflow.
-# numbers = [1, 6, 2, 2, 7, 1, 6, 13, 99, 7]
+# The help of stackoverflow.
+numbers = [1, 6, 2, 2, 7, 1, 6, 13, 99, 7]
 
-# for num in range(0, len(numbers) -1):
-#     if numbers[num] == 2 and (numbers[num+1]) == 2:
-#         print(True)
+for num in range(0, len(numbers) -1):
+    if numbers[num] == 2 and (numbers[num+1]) == 2:
+        print(True)
     
 
 # 4. Print the sum of the numbers,
