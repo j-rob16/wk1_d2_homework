@@ -6,25 +6,32 @@ from ast import Return
 numbers = [1, 6, 2, 2, 7, 1, 6, 13, 99, 7]
 
 # 1. Print out a list of the even integers:
-for num in numbers:
-    if num % 2 == 0:
-        print(num)
+def fet_evens(list):
+    evens = []
+    for num in numbers:
+        if num % 2 == 0:
+            evens.append(num)
+    return evens
 
 # 2. Print the difference between the largest and smallest value:
-numbers.sort()
-smallest = numbers[0]
-largest = numbers[-1]
-print(largest - smallest)
+def sort_nums(list):
+    
+
+    list.sort()
+    smallest = list[0]
+    largest = list[-1]
+    return largest - smallest
 
 # 3. Print True if the list contains a 2 next to a 2 somewhere:
 
-# The help of stackoverflow.
-numbers = [1, 6, 2, 2, 7, 1, 6, 13, 99, 7]
+def check_doubles(list):
+    result = False
+    for index, number in enumerate(list):
+        if (number == 2 and list[index - 1] == 2 and index != 0):
+            result = True
+    return result
 
-for num in range(0, len(numbers) -1):
-    if numbers[num] == 2 and (numbers[num+1]) == 2:
-        print(True)
-    
+print(check_doubles(numbers))
 
 # 4. Print the sum of the numbers,
 #    BUT ignore any section of numbers starting with a 6 and extending to the next 7.
@@ -33,24 +40,17 @@ for num in range(0, len(numbers) -1):
 
 numbers = [1, 6, 2, 2, 7, 1, 6, 13, 99, 7]
 
-index_1 = 0
-index_2 = 0
+total = 0
+found_6 = False
 for num in numbers:
     if num == 6:
-        index_1 = numbers[num]
+        found_6 = True
+    elif num == 7:
+        found_6 = False
     else:
-        if num == 7:
-            index_2 = numbers[num]
+        total += num
 
-no_4_total = 0
-
-for num in numbers:
-    if num == 6:
-        del(numbers[index_1:index_2])
-    else:
-        no_4_total += num
-
-print(no_4_total)
+print(total)
 
 
 # 5. HARD! Print the sum of the numbers.
@@ -60,3 +60,10 @@ print(no_4_total)
 #
 #    So [5, 13, 2] would have sum of 5.
 
+total = 0
+for index, number in enumerate(numbers):
+    if (number == 13) or (numbers[index - 1] == 13 and index != 0):
+        pass
+    else: 
+        total += number
+        
